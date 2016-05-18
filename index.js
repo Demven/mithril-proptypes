@@ -1,4 +1,4 @@
-export PropTypes from './PropTypes';
+import types from './PropTypes';
 
 function getType(prop) {
     let type = typeof prop;
@@ -35,3 +35,5 @@ export function checkProps(props) {
         }
     }
 }
+
+export const PropTypes = types;

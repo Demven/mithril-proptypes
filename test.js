@@ -1,4 +1,4 @@
-import checkProps from './index';
+import { checkProps } from './index';
 import PropTypes from './PropTypes';
 
 var props = {

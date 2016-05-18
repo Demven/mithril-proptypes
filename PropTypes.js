@@ -1,43 +1,38 @@
-import {
-    stringValidator,
-    numberValidator,
-    booleanValidator,
-    objectValidator,
-    arrayValidator,
-    functionValidator,
-} from './validators';
+var validators = require('./validators');
 
-const PropTypes = {
+var PropTypes = {
     string: {
         type: 'string',
-        validator: stringValidator,
+        validator: validators.stringValidator,
         isRequired: false,
     },
     number: {
         type: 'number',
-        validator: numberValidator,
+        validator: validators.numberValidator,
         isRequired: false,
     },
     boolean: {
         type: 'boolean',
-        validator: booleanValidator,
+        validator: validators.booleanValidator,
         isRequired: false,
     },
     object: {
         type: 'object',
-        validator: objectValidator,
+        validator: validators.objectValidator,
         isRequired: false,
     },
     array: {
         type: 'array',
-        validator: arrayValidator,
+        validator: validators.arrayValidator,
         isRequired: false,
     },
     function: {
         type: 'function',
-        validator: functionValidator,
+        validator: validators.functionValidator,
         isRequired: false,
     },
 };
 
-export default PropTypes;
+module.exports = {
+    PropTypes: PropTypes
+};

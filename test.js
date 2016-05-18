@@ -1,5 +1,5 @@
-import { checkProps } from './index';
-import PropTypes from './PropTypes';
+var checkProps = require('./index').checkProps;
+var PropTypes = require('./index').PropTypes;
 
 var props = {
     pNumber: 1,
@@ -17,5 +17,7 @@ var rules = {
     pObj: PropTypes,
     pFun: PropTypes.function,
 };
+
+console.log('test', rules['pNumber']);
 
 checkProps(props)(rules);

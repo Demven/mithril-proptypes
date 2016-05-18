@@ -1,24 +1,23 @@
-import types from './PropTypes';
+var PropTypes = require('./PropTypes');
 
 function getType(prop) {
-    let type = typeof prop;
+    var type = typeof prop;
     if (type === 'object' && prop instanceof Array) {
         type = 'array';
     }
     return type;
 }
 
-export function checkProps(props) {
-    return (rules) => {
-        for (const propName in props) {
+function checkProps(props) {
+    return function (rules) {
+        for (var propName in props) {
             if (props.hasOwnProperty(propName)) {
-                console.info('----');
-                console.info('propName', propName);
+                var prop = props[propName];
+                var rule = rules[propName];
 
-                const prop = props[propName];
-                const rule = rules[propName];
-
-                console.info('rule', rule );
+                console.log('propName', propName);
+                console.log('prop', prop);
+                console.log('rule', rule);
 
                 if(rule){
                     if (rule.validator) {
@@ -36,4 +35,7 @@ export function checkProps(props) {
     }
 }
 
-export const PropTypes = types;
+module.exports = {
+    PropTypes: PropTypes,
+    checkProps: checkProps
+};

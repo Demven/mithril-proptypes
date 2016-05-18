@@ -1,23 +1,38 @@
-export function objectValidator(obj) {
+function objectValidator(obj) {
+    console.log('objectValidator');
     return typeof obj === 'object';
 }
 
-export function functionValidator(obj) {
+function functionValidator(obj) {
+    console.log('functionValidator');
     return typeof obj === 'function';
 }
 
-export function arrayValidator(arr) {
+function arrayValidator(arr) {
+    console.log('arrayValidator');
     return arr instanceof Array;
 }
 
-export function booleanValidator(num) {
+function booleanValidator(num) {
+    console.log('booleanValidator');
     return typeof num === 'boolean';
 }
 
-export function numberValidator(num) {
+function numberValidator(num) {
+    console.log('numberValidator');
     return typeof num === 'number';
 }
 
-export function stringValidator(str) {
+function stringValidator(str) {
+    console.log('stringValidator');
     return typeof str === 'string';
 }
+
+module.exports = {
+    objectValidator: objectValidator,
+    functionValidator: functionValidator,
+    arrayValidator: arrayValidator,
+    booleanValidator: booleanValidator,
+    numberValidator: numberValidator,
+    stringValidator: stringValidator,
+};

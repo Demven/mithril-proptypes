@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/Demven/mithril-proptypes"
   },
-  "main": "index.js",
+  "main": "index-es5.js",
   "keywords": [
     "mithril",
     "proptype",

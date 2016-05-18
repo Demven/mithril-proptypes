@@ -1,0 +1,21 @@
+{
+  "name": "mithril-proptypes",
+  "version": "1.0.0",
+  "description": "Tiny efficient type-checking library for use with Mithril.js with syntax similar to React.PropTypes. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mithril",
+    "proptype",
+    "props",
+    "prop-types",
+    "validate",
+    "types",
+    "type-check",
+    "validation"
+  ],
+  "author": "Dmitry Salnikov dmitry_salnikov@protonmail.com",
+  "license": "ISC"
+}

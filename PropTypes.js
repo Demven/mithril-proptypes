@@ -7,7 +7,7 @@ import {
     functionValidator,
 } from './validators';
 
-export default PropTypes = {
+const PropTypes = {
     string: {
         type: 'string',
         validator: stringValidator,
@@ -39,3 +39,5 @@ export default PropTypes = {
         isRequired: false,
     },
 };
+
+export default PropTypes;

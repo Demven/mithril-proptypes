@@ -1,3 +1,5 @@
+export PropTypes from './PropTypes';
+
 function getType(prop) {
     let type = typeof prop;
     if (type === 'object' && prop instanceof Array) {
@@ -6,7 +8,7 @@ function getType(prop) {
     return type;
 }
 
-export default function checkProps(props) {
+export function checkProps(props) {
     return (rules) => {
         for (const propName in props) {
             if (props.hasOwnProperty(propName)) {

@@ -15,10 +15,6 @@ function checkProps(props) {
                 var prop = props[propName];
                 var rule = rules[propName];
 
-                console.log('propName', propName);
-                console.log('prop', prop);
-                console.log('rule', rule);
-
                 if(rule){
                     if (rule.validator) {
                         if (!rule.validator(prop)) {
@@ -28,7 +24,7 @@ function checkProps(props) {
                         console.warn('No chosen prop type for prop with name "' + propName + '"');
                     }
                 } else {
-                    console.warn('No props declaration for prop with name "' + propName + '"');
+                    console.warn('There is no prop type specified for prop with name "' + propName + '"');
                 }
             }
         }

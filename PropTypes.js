@@ -1,6 +1,6 @@
 var validators = require('./validators');
 
-var PropTypes = {
+module.exports = {
     string: {
         type: 'string',
         validator: validators.stringValidator,
@@ -31,8 +31,4 @@ var PropTypes = {
         validator: validators.functionValidator,
         isRequired: false,
     },
-};
-
-module.exports = {
-    PropTypes: PropTypes
 };

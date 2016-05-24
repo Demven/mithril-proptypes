@@ -18,6 +18,4 @@ var rules = {
     pFun: PropTypes.function,
 };
 
-console.log('test', rules['pNumber']);
-
 checkProps(props)(rules);

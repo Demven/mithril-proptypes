@@ -7,15 +7,26 @@ var props = {
     pBoolean: true,
     pObj: { some: 1 },
     pFun: function(){},
-    pArr: [1, 2, 3]
+    pArr: [1, 2, 3],
+    pComplex: {
+        first: 13,
+        second: 'second',
+        third: true
+    }
 };
 
 var rules = {
-    pNumber: PropTypes.object,
-    pString: PropTypes.boolean,
+    pNumber: PropTypes.number,
+    pString: PropTypes.string,
     pBoolean: PropTypes.boolean,
-    pObj: PropTypes,
+    pObj: PropTypes.object,
     pFun: PropTypes.function,
+    pArr: PropTypes.array,
+    pComplex: PropTypes.complex({
+        first: PropTypes.string,
+        second: PropTypes.number,
+        third: PropTypes.array,
+    })
 };
 
 checkProps(props)(rules);

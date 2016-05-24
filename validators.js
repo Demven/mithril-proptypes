@@ -1,5 +1,7 @@
+var checkProps = require('./check');
+
 function objectValidator(obj) {
-    return typeof obj === 'object';
+    return typeof obj === 'object' && !(obj instanceof Array);
 }
 
 function functionValidator(obj) {
@@ -22,6 +24,23 @@ function stringValidator(str) {
     return typeof str === 'string';
 }
 
+function complexValidator(props, propName) {
+    var passed = false;
+    
+    if (objectValidator(props) && this.rules && objectValidator(this.rules)) {
+        try {
+            checkProps(props, true)(this.rules);
+            passed = true;
+        } catch (e) {
+            console.warn('> Complex prop declarations errors for ' + propName + ':');
+            console.warn(e.message);
+            passed = false;
+        }
+    }
+
+    return passed;
+}
+
 module.exports = {
     objectValidator: objectValidator,
     functionValidator: functionValidator,
@@ -29,4 +48,5 @@ module.exports = {
     booleanValidator: booleanValidator,
     numberValidator: numberValidator,
     stringValidator: stringValidator,
+    complexValidator: complexValidator,
 };

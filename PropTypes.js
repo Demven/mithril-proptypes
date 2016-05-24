@@ -31,4 +31,13 @@ module.exports = {
         validator: validators.functionValidator,
         isRequired: false,
     },
+    
+    complex: function(rules) {
+        return {
+            type: 'complex',
+            validator: validators.complexValidator,
+            rules: rules,
+            isRequired: false,
+        };
+    }
 };

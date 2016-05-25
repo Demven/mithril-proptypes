@@ -12,20 +12,45 @@ var props = {
         first: 13,
         second: 'second',
         third: true
-    }
+    },
+    pArrayComplex: [
+        {
+            id: 1,
+            gender: 'male',
+            married: false
+        },
+        {
+            id: '2',
+            gender: 'female',
+            married: true
+        },
+        {
+            id: 3,
+            gender: 'male',
+            married: false
+        }
+    ],
 };
 
 var rules = {
     pNumber: PropTypes.number,
     pString: PropTypes.string,
     pBoolean: PropTypes.boolean,
-    pObj: PropTypes.object,
+    pObj: PropTypes.string,
     pFun: PropTypes.function,
     pArr: PropTypes.array,
-    pComplex: PropTypes.complex({
-        first: PropTypes.string,
-        second: PropTypes.number,
-        third: PropTypes.array,
+    pComplex: PropTypes.objectWith({
+        first: PropTypes.number,
+        second: PropTypes.string,
+        third: PropTypes.boolean,
+    }),
+    pArrayComplex: PropTypes.arrayOf({
+        id: PropTypes.number,
+        gender: PropTypes.string,
+        married: PropTypes.boolean,
+    }),
+    pAnotherArrayComplex: PropTypes.arrayOf({
+        name: PropTypes.string
     })
 };
 

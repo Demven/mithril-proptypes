@@ -24,17 +24,46 @@ function stringValidator(str) {
     return typeof str === 'string';
 }
 
-function complexValidator(props, propName) {
+function objectWithValidator(object, propName) {
     var passed = false;
     
-    if (objectValidator(props) && this.rules && objectValidator(this.rules)) {
-        try {
-            checkProps(props, true)(this.rules);
-            passed = true;
-        } catch (e) {
-            console.warn('> Complex prop declarations errors for ' + propName + ':');
-            console.warn(e.message);
+    if (objectValidator(object) && this.rules && objectValidator(this.rules)) {
+        passed = checkProps(object, propName)(this.rules);
+    }
+
+    return passed;
+}
+
+function arrayOfValidator(array, propName) {
+    var passed = true,
+        withoutError = false;
+
+    if (arrayValidator(array) && this.rules && objectValidator(this.rules)) {
+        var arrayItem,
+            i = 0,
+            len = array.length;
+
+        if (len === 0) {
             passed = false;
+            console.warn('PropTypes warning: array ' + propName + ' is empty');
+        }
+
+        for( ; i < len; i++) {
+            arrayItem = array[i];
+
+            if (!objectValidator(arrayItem)) {
+                passed = false;
+                console.warn('PropTypes warning: array ' + propName + ' contains non-object element!', arrayItem);
+                break;
+            }
+
+
+            withoutError = checkProps(arrayItem, propName)(this.rules);
+
+            if (!withoutError) {
+                console.warn('Check array item with index = ' + i, arrayItem);
+                passed = false;
+            }
         }
     }
 
@@ -48,5 +77,6 @@ module.exports = {
     booleanValidator: booleanValidator,
     numberValidator: numberValidator,
     stringValidator: stringValidator,
-    complexValidator: complexValidator,
+    objectWithValidator: objectWithValidator,
+    arrayOfValidator: arrayOfValidator,
 };

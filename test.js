@@ -2,7 +2,6 @@ var checkProps = require('./index').checkProps;
 var PropTypes = require('./index').PropTypes;
 
 var props = {
-    pNumber: 1,
     pString: '2',
     pBoolean: true,
     pObj: { some: 1 },
@@ -33,10 +32,10 @@ var props = {
 };
 
 var rules = {
-    pNumber: PropTypes.number,
-    pString: PropTypes.string,
+    pNumber: PropTypes.number.isRequired,
+    pString: PropTypes.number,
     pBoolean: PropTypes.boolean,
-    pObj: PropTypes.string,
+    pObj: PropTypes.function,
     pFun: PropTypes.function,
     pArr: PropTypes.array,
     pComplex: PropTypes.objectWith({
@@ -51,7 +50,7 @@ var rules = {
     }),
     pAnotherArrayComplex: PropTypes.arrayOf({
         name: PropTypes.string
-    })
+    }).isRequired
 };
 
 checkProps(props)(rules);

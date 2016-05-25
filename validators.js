@@ -27,8 +27,8 @@ function stringValidator(str) {
 function objectWithValidator(object, propName) {
     var passed = false;
     
-    if (objectValidator(object) && this.rules && objectValidator(this.rules)) {
-        passed = checkProps(object, propName)(this.rules);
+    if (objectValidator(object) && this._rules && objectValidator(this._rules)) {
+        passed = checkProps(object, propName)(this._rules);
     }
 
     return passed;
@@ -38,7 +38,7 @@ function arrayOfValidator(array, propName) {
     var passed = true,
         withoutError = false;
 
-    if (arrayValidator(array) && this.rules && objectValidator(this.rules)) {
+    if (arrayValidator(array) && this._rules && objectValidator(this._rules)) {
         var arrayItem,
             i = 0,
             len = array.length;
@@ -58,7 +58,7 @@ function arrayOfValidator(array, propName) {
             }
 
 
-            withoutError = checkProps(arrayItem, propName)(this.rules);
+            withoutError = checkProps(arrayItem, propName)(this._rules);
 
             if (!withoutError) {
                 console.warn('Check array item with index = ' + i, arrayItem);

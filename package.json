@@ -1,6 +1,6 @@
 {
   "name": "mithril-proptypes",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Tiny efficient type-checking library for use with Mithril.js with syntax similar to React.PropTypes.",
   "repository": {
     "type": "git",

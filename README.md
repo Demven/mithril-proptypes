@@ -109,8 +109,8 @@ PropTypes:
 * function
 * object
 * array
-* objectWith (complex type)
-* arrayOf (complex type)
+* objectWith() - complex type
+* arrayOf() - complex type
 
 <h2>Complex Types</h2>
 *objectWith* - is a type definition of each property of an object

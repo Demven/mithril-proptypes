@@ -1,7 +1,11 @@
 var checkProps = require('./check');
+var replaceWithDefaults = require('./defaults');
 
-var MithrilComponent = function MithrilComponent(props, propTypes) {
-    checkProps(props)(propTypes);
+var MithrilComponent = function MithrilComponent(props, propTypes, defaultProps) {
+    this.props = props;
+
+    checkProps(this.props)(propTypes);
+    replaceWithDefaults(this.props, defaultProps);
 
     var self = this;
 

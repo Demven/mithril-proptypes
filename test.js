@@ -1,5 +1,6 @@
 var checkProps = require('./index').checkProps;
 var PropTypes = require('./index').PropTypes;
+var replaceWithDefaults = require('./defaults');
 
 var props = {
     pString: '2',
@@ -53,4 +54,12 @@ var rules = {
     }).isRequired
 };
 
-checkProps(props)(rules);
+var defaultProps = {
+    pNumber: 23144,
+};
+
+// checkProps(props)(rules);
+
+replaceWithDefaults(props, defaultProps);
+
+console.log(props.pNumber);

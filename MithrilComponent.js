@@ -4,8 +4,13 @@ var replaceWithDefaults = require('./defaults');
 var MithrilComponent = function MithrilComponent(props, propTypes, defaultProps) {
     this.props = props;
 
-    checkProps(this.props)(propTypes);
-    replaceWithDefaults(this.props, defaultProps);
+    if (this.props && propTypes) {
+        checkProps(this.props)(propTypes);
+    }
+
+    if (defaultProps) {
+        replaceWithDefaults(this.props, defaultProps);
+    }
 
     var self = this;
 

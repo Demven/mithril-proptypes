@@ -1,10 +1,11 @@
 function replaceWithDefaults(props, defaultProps) {
-    for (var propName in props) {
-        if (props.hasOwnProperty(propName)) {
-            var prop = props[propName];
+    for (var defaultPropName in defaultProps) {
+        if (defaultProps.hasOwnProperty(defaultPropName)) {
+            var defaultProp = defaultProps[defaultPropName];
+            var propToReplaceValue = props[defaultPropName];
 
-            if (prop === undefined) {
-                prop = defaultProps[propName];
+            if (propToReplaceValue === undefined) {
+                props[defaultPropName] = defaultProp;
             }
         }
     }

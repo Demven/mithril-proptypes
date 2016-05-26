@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/badge/npm-v3.1.0-blue.svg)]()
+[![npm](https://img.shields.io/badge/npm-v3.2.1-blue.svg)](https://www.npmjs.com/package/mithril-proptypes)
 [![npm](https://img.shields.io/badge/usage-standalone%2Fmithril-green.svg)]()
 # mithril-proptypes
 
@@ -67,8 +67,6 @@ const propTypes = {
 class TodoItem extends MithrilComponent {
   constructor(props) {
     super(props, propTypes);
-    
-    this.props = props;
   }
   
   view() {
@@ -80,6 +78,34 @@ class TodoItem extends MithrilComponent {
 ```
 Now this check is doing by MithrilComponent.
 
+<h2>defaultProps with MithrilComponent</h2>
+If your data doesn't contain some property but you define default value for it with 'defaultProps' - then it will be automatically replaced with that value.
+```js
+import { MithrilComponent, PropTypes } from 'mithril-proptypes';
+
+const propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  done: PropTypes.boolean,
+};
+
+const defaultProps = {
+  done: false,
+};
+
+class TodoItem extends MithrilComponent {
+  constructor(props) {
+    super(props, propTypes, defaultProps);
+  }
+  
+  view() {
+    return (
+      <div className="TodoItem">{this.props.done}</div>
+    );
+  }
+}
+```
+
 <h2>Additional features of MithrilComponent</h2>
 MithrilComponent class also adds useful lifecycle method onUnload() to your component.
 This method will be called by mithril.js when this component is going to be removed from the DOM, so you can save some data for example. 
@@ -89,8 +115,6 @@ import { MithrilComponent, PropTypes } from 'mithril-proptypes';
 class App extends MithrilComponent {
   constructor(props) {
     super();
-    
-    this.props = props;
   }
   
   onUnload() {

@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/badge/npm-v3.1.0-blue.svg)]()
+[![npm](https://img.shields.io/badge/usage-standalone%2Fmithril-green.svg)]()
 # mithril-proptypes
 
 Awesome lightweight library for data validation and type checking for Mithril.js inspired by React PropTypes.
@@ -52,7 +54,7 @@ class TodoItem {
 ```
 
 <h2>MithrilComponent class</h2>
-To simplify usage of such check in each mithril component you can extend from the MithrilComponent class provided by this library:
+To simplify usage of such checks in the every your mithril component you can extend from the MithrilComponent class provided by this library:
 ```js
 import { MithrilComponent, PropTypes } from 'mithril-proptypes';
 
@@ -113,8 +115,8 @@ PropTypes:
 * arrayOf() - complex type
 
 <h2>Complex Types</h2>
-*objectWith* - is a type definition of each property of an object
-*arrayOf* - is a type definition of each item of an array (each  property of object-item)
+objectWith - is a type definition of each property of an object
+arrayOf - is a type definition of each item of an array (each  property of object-item)
 ```js
 var props = {
     someObject: {
@@ -188,3 +190,6 @@ var checkProps = require('mithril-proptypes').checkProps;
 
 checkProps(props)(proptypes);
 ```
+
+<h2>Panned Features</h2>
+* Turn off checks for production

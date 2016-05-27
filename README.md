@@ -215,5 +215,5 @@ var checkProps = require('mithril-proptypes').checkProps;
 checkProps(props)(proptypes);
 ```
 
-<h2>Panned Features</h2>
+<h2>Planned Features</h2>
 * Turn off checks for production

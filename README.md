@@ -3,7 +3,7 @@
 # mithril-proptypes
 
 Awesome lightweight library for data validation and type checking for Mithril.js inspired by React PropTypes.
-You can you this library as a standalone dependency, because it doesn't have a binding with Mithril.js, though provides special tools to easy integration with Mitril.
+You can use this library as a standalone dependency, because it doesn't have a binding with Mithril.js, though provides special tools to easy integration with Mitril.
 
 <h2>Basic Usage</h2>
 ```js

@@ -217,3 +217,4 @@ checkProps(props)(proptypes);
 
 <h2>Planned Features</h2>
 * Turn off checks for production
+* ArrayOf can describe not only objects, it can be array of numbers, strings or any other type.
